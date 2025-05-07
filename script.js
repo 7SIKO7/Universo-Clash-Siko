@@ -1,0 +1,106 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const memberList = document.querySelector('.member-list');
+    const membersData = [
+        { name: "Dark⚡Duvan", role: "Member", trophies: 9000, arena: "Arena_L9 / Legendary Arena" },
+        { name: "Andrés :)", role: "Elder", trophies: 9000, arena: "Arena_L9 / Legendary Arena" },
+        { name: "milo", role: "Elder", trophies: 9000, arena: "Arena_L9 / Legendary Arena" },
+        { name: "jeh", role: "Co-leader", trophies: 9000, arena: "Arena_L9 / Legendary Arena" },
+        { name: "cdnn", role: "Co-leader", trophies: 9000, arena: "Arena_L9 / Legendary Arena" },
+        { name: "locooficialxd", role: "Co-leader", trophies: 9000, arena: "Arena_L9 / Legendary Arena" },
+        { name: "♡Cindy♡", role: "Elder", trophies: 9000, arena: "Arena_L9 / Legendary Arena" },
+        { name: "Genji Arikado", role: "Co-leader", trophies: 9000, arena: "Arena_L9 / Legendary Arena" },
+        { name: "Alejandro 1999", role: "Member", trophies: 9000, arena: "Arena_L9 / Legendary Arena" },
+        { name: "Tato", role: "Member", trophies: 9000, arena: "Arena_L9 / Legendary Arena" },
+        { name: "juliús", role: "Co-leader", trophies: 9000, arena: "Arena_L9 / Legendary Arena" },
+        { name: "Sensei-Aliby", role: "Member", trophies: 9000, arena: "Arena_L9 / Legendary Arena" },
+        { name: "ѵεɡα ©️®️™️", role: "Member", trophies: 9000, arena: "Arena_L9 / Legendary Arena" },
+        { name: "Invictus", role: "Member", trophies: 9000, arena: "Arena_L9 / Legendary Arena" },
+        { name: "Smith George", role: "Leader", trophies: 9000, arena: "Arena_L9 / Legendary Arena" },
+        { name: "Jhan Carlos", role: "Member", trophies: 9000, arena: "Arena_L9 / Legendary Arena" },
+        { name: "Apolo Creed", role: "Co-leader", trophies: 9000, arena: "Arena_L9 / Legendary Arena" },
+        { name: "Ghost", role: "Co-leader", trophies: 9000, arena: "Arena_L9 / Legendary Arena" },
+        { name: "Alejandro", role: "Co-leader", trophies: 8867, arena: "Arena_L8 / PANCAKES!" },
+        { name: "Humberto Armend", role: "Co-leader", trophies: 8859, arena: "Arena_L8 / PANCAKES!" },
+        { name: "mategames", role: "Co-leader", trophies: 8694, arena: "Arena_L8 / PANCAKES!" },
+        { name: "ALEJO", role: "Member", trophies: 8672, arena: "Arena_L8 / PANCAKES!" },
+        { name: "leovacart", role: "Co-leader", trophies: 8610, arena: "Arena_L8 / PANCAKES!" },
+        { name: "siko", role: "Co-leader", trophies: 8548, arena: "Arena_L8 / PANCAKES!" },
+        { name: "Diego Ak", role: "Co-leader", trophies: 8509, arena: "Arena_L8 / PANCAKES!" },
+        { name: "Xxpro", role: "Member", trophies: 8500, arena: "Arena_L8 / PANCAKES!" },
+        { name: "CamusBernal", role: "Co-leader", trophies: 8500, arena: "Arena_L8 / PANCAKES!" },
+        { name: "Androsmu", role: "Co-leader", trophies: 8500, arena: "Arena_L8 / PANCAKES!" },
+        { name: "ElectryFire", role: "Member", trophies: 8327, arena: "Arena_L7 / Clash Fest" },
+        { name: "caly", role: "Co-leader", trophies: 8265, arena: "Arena_L7 / Clash Fest" },
+        { name: "@EL.CHUGA&", role: "Member", trophies: 8240, arena: "Arena_L7 / Clash Fest" },
+        { name: "MillosBernal", role: "Member", trophies: 8184, arena: "Arena_L7 / Clash Fest" },
+        { name: "Lucas", role: "Co-leader", trophies: 8152, arena: "Arena_L7 / Clash Fest" },
+        { name: "乂 Nicolás 么", role: "Member", trophies: 8141, arena: "Arena_L7 / Clash Fest" },
+        { name: "|£Ł☆PĂŤŘØŇ|", role: "Member", trophies: 8080, arena: "Arena_L7 / Clash Fest" },
+        { name: "supercell", role: "Member", trophies: 8030, arena: "Arena_L7 / Clash Fest" },
+        { name: "ciro", role: "Member", trophies: 8000, arena: "Arena_L7 / Clash Fest" },
+        { name: "NOMAD", role: "Member", trophies: 8000, arena: "Arena_L7 / Clash Fest" },
+        { name: "Acariow", role: "Member", trophies: 7900, arena: "Arena_L6 / Boot Camp" },
+        { name: "Santiago_7", role: "Member", trophies: 7856, arena: "Arena_L6 / Boot Camp" },
+        { name: "Fabián v", role: "Member", trophies: 7831, arena: "Arena_L6 / Boot Camp" },
+        { name: "Andres M", role: "Member", trophies: 7828, arena: "Arena_L6 / Boot Camp" },
+        { name: "°ALEX°", role: "Co-leader", trophies: 7814, arena: "Arena_L6 / Boot Camp" },
+        { name: "ESTEBAN", role: "Member", trophies: 7733, arena: "Arena_L6 / Boot Camp" },
+        { name: "supxell", role: "Member", trophies: 7716, arena: "Arena_L6 / Boot Camp" },
+        { name: "rey richar", role: "Member", trophies: 7695, arena: "Arena_L6 / Boot Camp" },
+        { name: "BR4GA FF", role: "Member", trophies: 7647, arena: "Arena_L6 / Boot Camp" },
+        { name: "hermione", role: "Member", trophies: 7533, arena: "Arena_L6 / Boot Camp" },
+        { name: "W4R M4N", role: "Elder", trophies: 7065, arena: "Arena_L5 / Dragon Spa" },
+        { name: "andresg118", role: "Elder", trophies: 6779, arena: "Arena_L4 / Silent Sanctuary" },
+    ];
+
+    function createMemberList() {
+        memberList.innerHTML = '';
+        membersData.forEach(member => {
+            const li = document.createElement('li');
+            const isLeaderOrCoLeader = member.role === 'Leader' || member.role === 'Co-leader';
+            const nameClass = isLeaderOrCoLeader ? 'member-name animated-name' : 'member-name';
+
+            li.innerHTML = `
+                <div class="member-info">
+                    <div class="member-avatar">${member.name[0].toUpperCase()}</div>
+                    <div>
+                        <div class="${nameClass}">${member.name}</div>
+                        <div class="member-role">${member.role}</div>
+                        <div class="member-trophies">${member.trophies} Trofeos</div>
+                        <div>${member.arena}</div>
+                    </div>
+                </div>
+            `;
+            memberList.appendChild(li);
+        });
+    }
+
+    function createStars() {
+        const header = document.querySelector('header');
+        const numStarsHeader = 20;
+        for (let i = 0; i < numStarsHeader; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.top = `${Math.random() * 100}%`;
+            star.style.animationDelay = `${Math.random() * 2}s`;
+            header.appendChild(star);
+        }
+
+        const clanLogo = document.querySelector('.clan-logo');
+        if (clanLogo) {
+            const numStarsClan = 15;
+            for (let i = 0; i < numStarsClan; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+                star.style.animationDelay = `${Math.random() * 2}s`;
+                clanLogo.appendChild(star);
+            }
+        }
+    }
+
+    createStars();
+    createMemberList();
+});

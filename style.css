@@ -1,0 +1,384 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+    text-align: center;
+}
+
+header {
+    background-color: #7b1fa2;
+    color: white;
+    padding: 1.5em 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+h1 {
+    margin: 0 0 0.5em 0;
+    font-size: 2.2em;
+    font-family: 'Press Start 2P', monospace;
+    letter-spacing: 0.1em;
+    animation: pulse-glow-header 2s infinite alternate;
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes pulse-glow-header {
+    from {
+        text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+        transform: scale(1);
+    }
+
+    to {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+        transform: scale(1.1);
+    }
+}
+
+main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.clan-info {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    width: 95%;
+    max-width: 700px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.clan-logo {
+    width: 120px;
+    height: 140px;
+    border-radius: 10px;
+    background-image: linear-gradient(to bottom, #4a148c, #7b1fa2);
+    border: 2px solid #311b92;
+    margin: 15px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    color: white;
+    animation: pulse-glow-clan-logo 2s infinite alternate;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes pulse-glow-clan-logo {
+    from {
+        transform: scale(1);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+
+    to {
+        transform: scale(1.1);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    }
+}
+
+.clan-logo:after {
+    content: "♛";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%,
+        79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    z-index: 2;
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.05);
+    }
+}
+
+.clan-name {
+    font-size: 1.5em;
+    font-family: 'Press Start 2P', monospace;
+    margin-top: 1em;
+    color: #333;
+    animation: pulse-glow-clan-name 2s infinite alternate;
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes pulse-glow-clan-name {
+    from {
+        text-shadow: 0 0 8px rgba(142, 36, 170, 0.5);
+        transform: scale(1);
+    }
+
+    to {
+        text-shadow: 0 0 20px rgba(142, 36, 170, 0.8);
+        transform: scale(1.1);
+    }
+}
+
+.clan-war-trophies {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #FF5722;
+    margin-top: 0.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.clan-war-trophies-display {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    background-color: #e0e0e0;
+    animation: pulse-glow 2s infinite alternate;
+    box-shadow: 0 0 15px rgba(142, 36, 170, 0.7);
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes pulse-glow {
+    from {
+        transform: scale(1);
+        box-shadow: 0 0 5px rgba(142, 36, 170, 0.2);
+    }
+
+    to {
+        transform: scale(1.1);
+        box-shadow: 0 0 20px rgba(142, 36, 170, 0.8);
+    }
+}
+
+.clan-war-trophy-icon {
+    width: 30px;
+    height: 30px;
+    background-color: #8e24aa;
+    border-radius: 50%;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%,
+        79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    position: relative;
+    z-index: 2;
+}
+
+.trophy-number {
+    font-size: 1.5em;
+    color: #8e24aa;
+    position: relative;
+    z-index: 2;
+}
+
+.clan-members {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 95%;
+    max-width: 700px;
+    margin-top: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+.member-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.member-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+    z-index: 2;
+}
+
+.member-list li:last-child {
+    border-bottom: none;
+    position: relative;
+    z-index: 2;
+}
+
+.member-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+    z-index: 2;
+}
+
+.member-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-image: linear-gradient(to bottom, #4a148c, #7b1fa2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.5em;
+    margin-right: 1em;
+    position: relative;
+    z-index: 2;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%,
+        79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.member-name {
+    font-weight: bold;
+    font-size: 1.1em;
+    position: relative;
+    z-index: 2;
+}
+
+.member-name::before {
+    content: "★";
+    color: #9c27b0;
+    margin-right: 0.5em;
+}
+
+
+.member-role {
+    color: #777;
+    font-size: 0.9em;
+    position: relative;
+    z-index: 2;
+}
+
+.member-trophies {
+    font-size: 1em;
+    color: #333;
+    position: relative;
+    z-index: 2;
+}
+
+.member-trophies {
+    font-weight: bold;
+    color: #f44336;
+    font-size: 1em;
+    position: relative;
+    z-index: 2;
+}
+
+.leader-highlight {
+    color: #FFD700;
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
+    animation: brillo 2s infinite alternate;
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes brillo {
+    from {
+        text-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
+    }
+
+    to {
+        text-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+    }
+}
+
+@media (max-width: 640px) {
+    .clan-info,
+    .clan-members {
+        width: 95%;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .member-list li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .member-info {
+        margin-bottom: 0;
+    }
+}
+
+/* Nuevos estilos para las estrellas */
+header .star {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%,
+        79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    animation: twinkle 2s infinite;
+    opacity: 0;
+    z-index: 0;
+}
+
+@keyframes twinkle {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.clan-info .star {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%,
+        79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    animation: twinkle 1.5s infinite;
+    opacity: 0;
+    z-index: 1;
+}
+
+.animated-name {
+    animation: pulse-glow-purple 1.5s infinite alternate;
+}
+
+@keyframes pulse-glow-purple {
+    from {
+        transform: scale(1);
+        text-shadow: 0 0 5px rgba(142, 36, 170, 0.5);
+    }
+    to {
+        transform: scale(1.05);
+        text-shadow: 0 0 15px rgba(142, 36, 170, 0.8);
+    }
+}
